@@ -108,7 +108,7 @@ export default function Projects() {
 
               <a href={project.url}
                 target="_blank">
-                <div className="border flex items-center px-4 py-2 rounded-md text-purple hover:text-white gap-2">
+                <div className="border flex items-center px-4 py-2 rounded-md text-pink hover:text-white gap-2">
                   <p className="flex lg:text-base md:text-xs text-sm">Go to Github repository</p>
                   <DiGithubBadge className="size-5" />
                 </div>
