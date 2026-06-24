@@ -23,7 +23,7 @@ export const translations: Record<Language, Translation> = {
     "pt-BR": {
         // tabTitle: "Lívia Silva | Desenvolvedora Backend",
         langButtonLabel: "Idioma",
-        welcome: "Bem-vindo ao meu portfólio",
+        welcome: "Boas vindas ao meu portfólio",
         heroWords: "Olá, Mundo! Sou a Lívia.",
         role: "Desenvolvedora Backend",
         whoAmI: "Quem sou eu?",
