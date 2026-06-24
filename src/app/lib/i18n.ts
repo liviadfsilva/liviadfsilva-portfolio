@@ -28,7 +28,7 @@ export const translations: Record<Language, Translation> = {
         role: "Desenvolvedora Backend",
         whoAmI: "Quem sou eu?",
         about:
-            "Sou Desenvolvedora e graduanda em Ciência da Computação, apaixonada por construir sistemas backend. " +
+            "Sou graduanda em Ciência da Computação e desenvolvedora com foco em backend. " +
             "Gosto muito de me desafiar através do aprendizado e colocando meu conhecimento em prática. " +
             "Desafiar-me de formas criativas é o que faço de melhor! Meu principal objetivo é alcançar excelência no " +
             "que eu faço, sem nunca esquecer que estou em constante evolução.",
