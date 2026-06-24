@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
     title: "Lívia Silva | Portfolio",
-    description: 'Backend Developer Portfolio',
+    // description: 'Backend Developer Portfolio',
     icons: "/icon/favicon.ico"
 }
 
