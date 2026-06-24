@@ -40,7 +40,7 @@ export const translations: Record<Language, Translation> = {
         builtWithLove: "Transformando ideias em soluções.",
         projects: {
             "book-review-blog":
-                "Plataforma para publicação de de resenha de livros projetada para gerenciar usuários, livros, " +
+                "Plataforma para publicação de resenha de livros projetada para gerenciar usuários, livros, " +
                 "resenhas e posts pessoais de blog.",
             "pixel-peel":
                 "Sistema desenvolvido para sustentar uma plataforma de e-commerce de adesivos digitais, " +
