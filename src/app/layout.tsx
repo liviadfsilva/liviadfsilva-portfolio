@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import { LanguageProvider } from './components/LanguageProvider'
 import LanguageToggle from './components/LanguageToggle'
+import TabTitle from "./components/TabTitle"
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
 const geistMono = Geist_Mono({
@@ -11,8 +12,7 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-    title: "Lívia Silva | Portfolio",
-    // description: 'Backend Developer Portfolio',
+    title: "Lívia Silva | Portfólio",
     icons: "/icon/favicon.ico"
 }
 
@@ -33,6 +33,7 @@ export default function RootLayout({
         <html lang="pt-BR" className={`${geistSans.variable} ${geistMono.variable} bg-darkBlue`}>
         <body className="font-sans antialiased">
         <LanguageProvider>
+            <TabTitle />
             <LanguageToggle />
             {children}
         </LanguageProvider>

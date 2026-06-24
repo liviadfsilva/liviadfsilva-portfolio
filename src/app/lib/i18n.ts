@@ -3,7 +3,7 @@ export type Language = "pt-BR" | "en-UK"
 export const DEFAULT_LANGUAGE: Language = "pt-BR"
 
 export type Translation = {
-    // tabTitle: string
+    tabTitle: string
     langButtonLabel: string
     welcome: string
     heroWords: string
@@ -21,7 +21,7 @@ export type Translation = {
 
 export const translations: Record<Language, Translation> = {
     "pt-BR": {
-        // tabTitle: "Lívia Silva | Desenvolvedora Backend",
+        tabTitle: "Lívia Silva | Portfólio",
         langButtonLabel: "Idioma",
         welcome: "Boas vindas ao meu portfólio",
         heroWords: "Olá, Mundo! Sou a Lívia.",
@@ -54,7 +54,7 @@ export const translations: Record<Language, Translation> = {
         },
     },
     "en-UK": {
-        // tabTitle: "Lívia Silva | Backend Developer",
+        tabTitle: "Lívia Silva | Portfolio",
         langButtonLabel: "Language",
         welcome: "Welcome to my Portfolio",
         heroWords: "Hello, World! I'm Lívia.",
