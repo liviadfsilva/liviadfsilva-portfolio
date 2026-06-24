@@ -1,26 +1,42 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import type { Metadata, Viewport } from 'next'
+import { Geist, Geist_Mono } from 'next/font/google'
+import './globals.css'
+import { LanguageProvider } from './components/LanguageProvider'
+import LanguageToggle from './components/LanguageToggle'
 
-const inter = Inter({ subsets: ["latin"] });
+const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
+const geistMono = Geist_Mono({
+    variable: '--font-geist-mono',
+    subsets: ['latin'],
+})
 
 export const metadata: Metadata = {
-  title: "Lily's Portfolio",
-  description: "Portfolio Backend",
-  icons: "/icon/favicon.ico"
-};
+    title: "Lívia Silva | Portfolio",
+    description: 'Backend Developer Portfolio',
+    icons: "/icon/favicon.ico"
+}
+
+export const viewport: Viewport = {
+    colorScheme: 'light dark',
+    themeColor: [
+        { media: '(prefers-color-scheme: light)', color: 'white' },
+        { media: '(prefers-color-scheme: dark)', color: 'black' },
+    ],
+}
 
 export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
+                                       children,
+                                   }: Readonly<{
+    children: React.ReactNode
 }>) {
-  return (
-    <html lang="pt-BR">
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-      </head>
-      <body className={`${inter.className} bg-darkBlue`}>{children}</body>
-    </html>
-  );
+    return (
+        <html lang="pt-BR" className={`${geistSans.variable} ${geistMono.variable} bg-darkBlue`}>
+        <body className="font-sans antialiased">
+        <LanguageProvider>
+            <LanguageToggle />
+            {children}
+        </LanguageProvider>
+        </body>
+        </html>
+    )
 }

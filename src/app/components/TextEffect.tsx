@@ -1,73 +1,88 @@
 "use client";
-import { useEffect, useState } from "react";
+
+import { useEffect, useMemo, useState } from "react";
 import { motion, stagger, useAnimate } from "framer-motion";
-import { cn } from "@/app/utils/cn";
+import { cn } from "@/app/lib/utils";
 
 type TextEffectProps = {
   words: string;
+  role: string;
   className?: string;
 };
 
 export const TextEffect = ({
-  words,
-  className,
-}: TextEffectProps) => {
+                             words,
+                              role,
+                             className,
+                           }: TextEffectProps) => {
   const [scope, animate] = useAnimate();
   const [animationComplete, setAnimationComplete] = useState(false);
 
-  let wordsArray = words.split(" ");
-  useEffect(() => {
-    animate(
-      "span",
-      {
-        opacity: 1,
-      },
-      {
-        duration: 2,
-        delay: stagger(0.2),
-      }
-    ).then(() => {
-      setAnimationComplete(true);
-    });
-  }, [scope.current]);
+  const wordsArray = useMemo(() => words.split(" "), [words]);
 
-  const renderWords = () => {
-    return (
-      <motion.div ref={scope}>
-        {wordsArray.map((word, idx) => {
-          return (
-            <motion.span
-              key={word + idx}
-              className={`${idx > 3 ? "text-purple" : "dark:text-white text-white"
-                } opacity-0`}
-            >
-              {word}{" "}
-            </motion.span>
-          );
-        })}
-      </motion.div>
-    );
-  };
+  useEffect(() => {
+    let mounted = true;
+
+    setAnimationComplete(false);
+
+    const runAnimation = async () => {
+      await animate(
+          "span",
+          {
+            opacity: 1,
+          },
+          {
+            duration: 2,
+            delay: stagger(0.2),
+          }
+      );
+
+      if (mounted) {
+        setAnimationComplete(true);
+      }
+    };
+
+    runAnimation();
+
+    return () => {
+      mounted = false;
+    };
+  }, [words, animate]);
 
   return (
-    <div className={cn("font-bold", className)}>
-      <div className="p-5 pt-1">
-        <div className="text-white text-4xl leading-snug tracking-wide space-y-2">
-          {renderWords()}
-          <div>
-          {animationComplete && (
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-              className="font-normal uppercase text-sm text-pink"
-            >
-              Backend Developer
-            </motion.p>
-          )}
+      <div className={cn("font-bold", className)}>
+        <div className="p-5 pt-1">
+          <div className="text-white text-4xl leading-snug tracking-wide space-y-2">
+            <motion.div ref={scope}>
+                {wordsArray.map((word, idx) => (
+                    <motion.span
+                        key={`${word}-${idx}`}
+                        initial={{ opacity: 0 }}
+                        className={
+                            word.replace(/[.,!?]/g, "") === "Lívia"
+                                ? "text-pink"
+                                : "dark:text-white text-white"
+                        }
+                    >
+                        {word}{" "}
+                    </motion.span>
+                ))}
+            </motion.div>
+
+            <div>
+              {animationComplete && (
+                  <motion.p
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 1 }}
+                      className="font-normal uppercase text-sm text-pink"
+                  >
+                    {role}
+                  </motion.p>
+              )}
+            </div>
           </div>
         </div>
       </div>
-    </div>
   );
 };

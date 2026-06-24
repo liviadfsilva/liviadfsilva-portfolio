@@ -1,14 +1,7 @@
-import {BiLogoFlask, BiLogoPostgresql} from "react-icons/bi";
-import {
-  DiDjango,
-  DiDocker,
-  DiJava,
-  DiMongodb,
-  DiPython,
-}
-
-from "react-icons/di";
-import {SiFastapi, SiSpring, SiSpringboot} from "react-icons/si";
+import { BiLogoFlask, BiLogoPostgresql } from "react-icons/bi"
+import { DiDjango, DiDocker, DiJava, DiMongodb, DiPython } from "react-icons/di"
+import { SiFastapi, SiSpring, SiSpringboot } from "react-icons/si"
+import { useLanguage } from "../LanguageProvider"
 
 export const skills = [
   {
@@ -75,12 +68,12 @@ export const skills = [
 ]
 
 export default function Skills() {
-
+  const { t } = useLanguage()
 
   return (
     <>
-      <div className="lg:text-3xl font-semibold text-lg py-6 lg:p-10">
-        <h2>Skills</h2>
+      <div className="lg:text-3xl font-semibold text-lg py-6 lg:p-10 text-center">
+        <h2>{t.skills}</h2>
       </div>
       <div className="grid grid-cols-4 lg:grid-cols-5 gap-4">
         {skills.map((skill) => (

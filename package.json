@@ -9,12 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@base-ui/react": "^1.6.0",
     "@tsparticles/engine": "^3.5.0",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.5.0",
+    "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.8",
-    "next": "14.2.5",
+    "next": "16.2.9",
+    "next-intl": "^4.13.0",
     "ogl": "^1.0.11",
     "react": "^18",
     "react-dom": "^18",
