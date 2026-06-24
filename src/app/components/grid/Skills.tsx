@@ -8,8 +8,7 @@ export const skills = [
     id: "java",
     name: "Java",
     icon: <DiJava />,
-    color: "text-[#e76f00]",
-    hover: "hover:text-[#ff963a]"
+    color: "text-[#e76f00]"
   },
   {
     id: "spring",
@@ -79,7 +78,7 @@ export default function Skills() {
         {skills.map((skill) => (
           <div
             key={skill.id}
-            className={`relative flex items-center flex-col gap-1 text-xs opacity-100 text-center ${skill.color} ${skill.hover} duration-200`}>
+            className={`relative flex items-center flex-col gap-1 text-xs opacity-100 text-center ${skill.color} duration-200`}>
             <span className={`*:size-10 rounded-lg p-2 bg-pink`}>{skill.icon}</span>
             <span>{skill.name}</span>
           </div>
