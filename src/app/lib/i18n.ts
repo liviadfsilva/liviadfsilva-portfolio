@@ -25,7 +25,7 @@ export const translations: Record<Language, Translation> = {
         langButtonLabel: "Idioma",
         welcome: "Boas vindas ao meu portfólio",
         heroWords: "Olá, Mundo! Sou a Lívia.",
-        role: "Desenvolvedora Backend",
+        role: "Desenvolvedora Back-end",
         whoAmI: "Quem sou eu?",
         about:
             "Sou graduanda em Ciência da Computação e desenvolvedora com foco em backend. " +
@@ -58,7 +58,7 @@ export const translations: Record<Language, Translation> = {
         langButtonLabel: "Language",
         welcome: "Welcome to my Portfolio",
         heroWords: "Hello, World! I'm Lívia.",
-        role: "Backend Developer",
+        role: "Back-end Developer",
         whoAmI: "Who am I?",
         about:
             "I'm a Software Developer and Computer Science Major passionate about building backend systems. " +
